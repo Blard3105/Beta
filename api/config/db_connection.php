@@ -1,14 +1,10 @@
 <?php
 
 $host = "localhost";
-
-$port = "5432"; 
-
-$dbname = "beta";
-
 $username = "postgres";
-
-$password = "PCamilo";
+$password = "Cesmag";
+$port = "5432"; 
+$dbname = "beta";
 
 //crear variables de conectividad
 $data_connection = "
@@ -24,12 +20,13 @@ $conn =pg_connect($data_connection);
     if (!$conn) {
         die("Connection failed: ". pg_last_error());
     }
-    else {echo "Connection successfully";
+    else {
+        //echo "Connection successfully";
     }
 
 
     //cerrar la conexion
 
-    pg_close($conn);
+    //pg_close($conn);
 
 ?>
