@@ -1,31 +1,36 @@
 <?php
 
-$host = "localhost";
-$username = "postgres";
-$password = "Cesmag";
-$port = "5432"; 
-$dbname = "beta";
+    /*$number1 = 20;
+    $number2 = 30;
+    $addition =  $number1 + $number2;
+    echo $addition;
+    */
 
-//crear variables de conectividad
-$data_connection = "
-host = $host
-port = $port
-dbname = $dbname
-user = $username
-password = $password";
+    /*
+    PostgresSQL Database connection 
+    Developer: Jhon
+    */
+    $host = "localhost";  //127.0.0.1
+    $username = "postgres"; 
+    $password = "PCamilo";
+    $dbname = "beta";
+    $port = "5432";
+    
+    $data_connection = "
+    host=$host
+    port=$port
+    dbname=$dbname
+    user=$username
+    password=$password
+    ";
+    
+    $conn = pg_connect($data_connection);
 
-$conn =pg_connect($data_connection);
-
-    //verificar conectividad
-    if (!$conn) {
+    if(!$conn){
         die("Connection failed: ". pg_last_error());
+    }else{
+        echo "Connected successfully";
     }
-    else {
-        //echo "Connection successfully";
-    }
-
-
-    //cerrar la conexion
 
     //pg_close($conn);
 
